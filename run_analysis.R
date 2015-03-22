@@ -55,7 +55,7 @@ read_data <- function(dir, labels, headers) {
   # Combine the data sets
   # col #1: subject 
   # col #2: activity 
-  # col #3-88: data set
+  # col #3-68: data set
   data <- cbind(subject, activity, x_tbl)
   names(data) <- c("subject", "activity", labels)
   data_tbl <- tbl_df(data)
@@ -67,18 +67,14 @@ read_data <- function(dir, labels, headers) {
 # Read the data for headers
 features <- read.table("features.txt")
 
-# Read the relevant data that has std or mean
-# We ignore the case here
-# Note: There is a difference in the number of columns based 
-# on whether we ignore the case. Without ignoring the case, 
-# we have 79 columns. By ignoring the case, we have 86 columns.
-headers <- grep("std|mean", features[,2], ignore.case=TRUE)
+# Read the relevant data that has std() or mean()
+headers <- grep("mean\\(\\)|std\\(\\)", features[, 2])
 
 # Rename the headers to make it more meaningful
 labels <- gsub("\\(\\)", "", features[headers, 2])
-labels <- gsub("\\(", "Of", labels)
-labels <- gsub("\\)", "", labels)
-labels <- gsub(",", "_", labels)
+labels <- gsub("-", "", labels)
+labels <- gsub("mean", "Mean", labels)
+labels <- gsub("std", "Std", labels)
 
 
 # Read the activity label data
@@ -112,4 +108,6 @@ avg_data_tbl <- data_tbl %>%
   group_by(subject, activity) %>%
   summarise_each(funs(mean))
 
-write.table(avg_data_tbl, file="data.txt", row.names=FALSE)
+# Write the tables into files
+write.table(data_tbl, file="clean_data.txt", row.names=FALSE)
+write.table(avg_data_tbl, file="avg_data.txt", row.names=FALSE)

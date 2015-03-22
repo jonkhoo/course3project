@@ -1,31 +1,19 @@
-# course3project
-Getting and Cleaning Data Course Project
+# Getting and Cleaning Data Course Project
 
 Overview
 ========
-1. Read the labels from features.txt.
-2. Select labels based on "std" or "mean" while ignoring the case. This gave 86 labels.
-3. Rename the labels to make it more meaningful.
-4. List the sub-directories under the current working directory. This assumes that each sub-directory contains the required data.
-5. For each of the sub directory, read the subject, activity and collected data.
-6. Join subject, activity and collected data into a table of 88 columns.
-7. Join the table from each sub-directory into a final table.
-8. Arrange the final table in order of subject and activity.
-9. Create a second data set by summarizing the value of each column grouping by subject and activity.
-10. Write the second data set into data.txt
+This repository contains the work done for Getting and Cleaning Data Course Project. 
 
-run_analysis.R
-==============
-This script can be ran in any directory containing the test and train data.
-It assumes that any of the sub directories found in the current directory
-to contain the necessary data.
+How to run the script
+=====================
+1. Unzip the data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip into a directory.
+2. Copy run_analysis.R into the directory and run the file. 
+	setwd(<directory>)
+	source("run_analysis.R")
+3. The script will create avg_data.txt (180x68) and clean_data.txt (10299x68).
+4. Read the data into table inside R Studio using the following code:
+	data <- read.table("avg_data.txt", header=TRUE) 
+5. There are 6 activities and 30 subjects in total, hence we have 180 rows of data and 66 columns that contain the selected features. The additional 2 columns contain the data for subjects and activities.
 
-data.txt
-========
-This is the second data set created by run_analysis.R
-
-Codebook.md
-===========
-This contains the Codebook for the data created above by run_analysis.R
 
 
