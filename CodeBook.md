@@ -15,11 +15,11 @@ What run_analyis.R does
 3. Perform cleaning on the headers by removing "()" and "-" and translating "mean" to "Mean" and "std" to "Std". This gives us 66 headers.
 4. Read the list of directories in the current working directory. This assumes that each of the sub directory contains the required files. For the given zip file, you should have "test" and "train" sub directories. 
 5. For each of the sub directory <dir>, the script performs the following:
-	a. Read the collected data (X_dir.txt) into x_tbl
-	b. Read the subject data (subject_dir.txt) into subject
-	c. Read the activity data (y_dir.txt) into activity
-	d. Combine the 3 data into a table in the following order: subject, activity, x_tbl
-	e. Return the table
+## Read the collected data (X_dir.txt) into x_tbl
+## Read the subject data (subject_dir.txt) into subject
+## Read the activity data (y_dir.txt) into activity
+## Combine the 3 data into a table in the following order: subject, activity, x_tbl
+## Return the table
 6. Combine the table returns from each sub directory into tmp_tbl
 7. Sort the data by subject then activity and store it into data_tbl
 8. From data_tbl, we group by subject and activity and calculates the average using mean(). The data is stored in avg_data_tbl
