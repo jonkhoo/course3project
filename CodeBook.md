@@ -3,10 +3,10 @@
 This file describes the variables, the data, and any transformations or work that I have performed to clean up the data.
 
 Site where the data was obtained: 
-http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+* http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
 Data for the project: 
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+* https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 What run_analyis.R does
 =======================
@@ -42,27 +42,72 @@ activity
 * 6 LAYING
 
 The following columns are extracted from the original data:
-* "tBodyAccMeanX"            "tBodyAccMeanY"            "tBodyAccMeanZ"           
-* "tBodyAccStdX"             "tBodyAccStdY"             "tBodyAccStdZ"            
-* "tGravityAccMeanX"         "tGravityAccMeanY"         "tGravityAccMeanZ"        
-* "tGravityAccStdX"          "tGravityAccStdY"          "tGravityAccStdZ"         
-* "tBodyAccJerkMeanX"        "tBodyAccJerkMeanY"        "tBodyAccJerkMeanZ"       
-* "tBodyAccJerkStdX"         "tBodyAccJerkStdY"         "tBodyAccJerkStdZ"        
-* "tBodyGyroMeanX"           "tBodyGyroMeanY"           "tBodyGyroMeanZ"          
-* "tBodyGyroStdX"            "tBodyGyroStdY"            "tBodyGyroStdZ"           
-* "tBodyGyroJerkMeanX"       "tBodyGyroJerkMeanY"       "tBodyGyroJerkMeanZ"      
-* "tBodyGyroJerkStdX"        "tBodyGyroJerkStdY"        "tBodyGyroJerkStdZ"       
-* "tBodyAccMagMean"          "tBodyAccMagStd"           "tGravityAccMagMean"      
-* "tGravityAccMagStd"        "tBodyAccJerkMagMean"      "tBodyAccJerkMagStd"      
-* "tBodyGyroMagMean"         "tBodyGyroMagStd"          "tBodyGyroJerkMagMean"    
-* "tBodyGyroJerkMagStd"      "fBodyAccMeanX"            "fBodyAccMeanY"           
-* "fBodyAccMeanZ"            "fBodyAccStdX"             "fBodyAccStdY"            
-* "fBodyAccStdZ"             "fBodyAccJerkMeanX"        "fBodyAccJerkMeanY"       
-* "fBodyAccJerkMeanZ"        "fBodyAccJerkStdX"         "fBodyAccJerkStdY"        
-* "fBodyAccJerkStdZ"         "fBodyGyroMeanX"           "fBodyGyroMeanY"          
-* "fBodyGyroMeanZ"           "fBodyGyroStdX"            "fBodyGyroStdY"           
-* "fBodyGyroStdZ"            "fBodyAccMagMean"          "fBodyAccMagStd"          
-* "fBodyBodyAccJerkMagMean"  "fBodyBodyAccJerkMagStd"   "fBodyBodyGyroMagMean"    
-* "fBodyBodyGyroMagStd"      "fBodyBodyGyroJerkMagMean" "fBodyBodyGyroJerkMagStd" 
-
+ 
+ 
+* "tBodyAccMeanX"				tBodyAcc-mean()-X       
+* "tBodyAccMeanY"				tBodyAcc-mean()-Y
+* "tBodyAccMeanZ"				tBodyAcc-mean()-Z
+* "tBodyAccStdX"      			tBodyAcc-std()-X       
+* "tBodyAccStdY"        		tBodyAcc-std()-Y     
+* "tBodyAccStdZ"        		tBodyAcc-std()-Z     
+* "tGravityAccMeanX"			tGravityAcc-mean()-X    
+* "tGravityAccMeanY"    		tGravityAcc-mean()-Y    
+* "tGravityAccMeanZ"    		tGravityAcc-mean()-Z    
+* "tGravityAccStdX"     		tGravityAcc-std()-X     
+* "tGravityAccStdY"     		tGravityAcc-std()-Y     
+* "tGravityAccStdZ"     		tGravityAcc-std()-Z    
+* "tBodyAccJerkMeanX"   		tBodyAccJerk-mean()-X     
+* "tBodyAccJerkMeanY"   		tBodyAccJerk-mean()-Y     
+* "tBodyAccJerkMeanZ"   		tBodyAccJerk-mean()-Z     
+* "tBodyAccJerkStdX"			tBodyAccJerk-std()-X        
+* "tBodyAccJerkStdY"    		tBodyAccJerk-std()-Y     
+* "tBodyAccJerkStdZ"    		tBodyAccJerk-std()-Z    
+* "tBodyGyroMeanX"      		tBodyGyro-mean()-X     
+* "tBodyGyroMeanY"      		tBodyGyro-mean()-Y     
+* "tBodyGyroMeanZ"      		tBodyGyro-mean()-Z    
+* "tBodyGyroStdX"       		tBodyGyro-std()-X     
+* "tBodyGyroStdY"       		tBodyGyro-std()-Y     
+* "tBodyGyroStdZ"       		tBodyGyro-std()-Z    
+* "tBodyGyroJerkMeanX"  		tBodyGyroJerk-mean()-X     
+* "tBodyGyroJerkMeanY"  		tBodyGyroJerk-mean()-Y     
+* "tBodyGyroJerkMeanZ"  		tBodyGyroJerk-mean()-Z    
+* "tBodyGyroJerkStdX"			tBodyGyroJerk-std()-X       
+* "tBodyGyroJerkStdY"   		tBodyGyroJerk-std()-Y     
+* "tBodyGyroJerkStdZ"   		tBodyGyroJerk-std()-Z    
+* "tBodyAccMagMean"     		tBodyAccMag-mean()     
+* "tBodyAccMagStd"      		tBodyAccMag-std()     
+* "tGravityAccMagMean"  		tGravityAccMag-mean()    
+* "tGravityAccMagStd"   		tGravityAccMag-std()     
+* "tBodyAccJerkMagMean" 		tBodyAccJerkMag-mean()     
+* "tBodyAccJerkMagStd"  		tBodyAccJerkMag-std()     
+* "tBodyGyroMagMean"    		tBodyGyroMag-mean()      
+* "tBodyGyroMagStd"     		tBodyGyroMag-std()     
+* "tBodyGyroJerkMagMean"		tBodyGyroJerkMag-mean()    
+* "tBodyGyroJerkMagStd"			tBodyGyroJerkMag-std()  
+* "fBodyAccMeanX"           	fBodyAcc-mean()-X 
+* "fBodyAccMeanY"           	fBodyAcc-mean()-Y
+* "fBodyAccMeanZ"           	fBodyAcc-mean()-Z 
+* "fBodyAccStdX"            	fBodyAcc-std()-X 
+* "fBodyAccStdY"            	fBodyAcc-std()-Y
+* "fBodyAccStdZ"            	fBodyAcc-std()-Z
+* "fBodyAccJerkMeanX"      		fBodyAccJerk-mean()-X  
+* "fBodyAccJerkMeanY"       	fBodyAccJerk-mean()-Y
+* "fBodyAccJerkMeanZ"       	fBodyAccJerk-mean()-Z
+* "fBodyAccJerkStdX"        	fBodyAccJerk-std()-X 
+* "fBodyAccJerkStdY"        	fBodyAccJerk-std()-Y
+* "fBodyAccJerkStdZ"        	fBodyAccJerk-std()-Z 
+* "fBodyGyroMeanX"				fBodyGyro-mean()-X           
+* "fBodyGyroMeanY"          	fBodyGyro-mean()-Y
+* "fBodyGyroMeanZ"          	fBodyGyro-mean()-Z 
+* "fBodyGyroStdX"           	fBodyGyro-std()-X 
+* "fBodyGyroStdY"           	fBodyGyro-std()-Y
+* "fBodyGyroStdZ"           	fBodyGyro-std()-Z 
+* "fBodyAccMagMean"         	fBodyAccMag-mean() 
+* "fBodyAccMagStd"          	fBodyAccMag-std()
+* "fBodyBodyAccJerkMagMean" 	fBodyBodyAccJerkMag-mean() 
+* "fBodyBodyAccJerkMagStd"  	fBodyBodyAccJerkMag-std() 
+* "fBodyBodyGyroMagMean"    	fBodyBodyGyroMag-mean() 
+* "fBodyBodyGyroMagStd"     	fBodyBodyGyroMag-std() 
+* "fBodyBodyGyroJerkMagMean"	fBodyBodyGyroJerkMag-mean() 
+* "fBodyBodyGyroJerkMagStd" 	fBodyBodyGyroJerkMag-std()
 
